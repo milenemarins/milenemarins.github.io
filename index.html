@@ -13,6 +13,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>
   body { margin: 0; background: #FBFAFB; overflow-x: hidden; }
+  html, body, body * { cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 24 24'><path d='M4.04 4.69a.5.5 0 0 1 .65-.65l16 6.5a.5.5 0 0 1-.06.95l-6.12 1.58a2 2 0 0 0-1.44 1.43l-1.58 6.13a.5.5 0 0 1-.95.06z' fill='%231C1B19' stroke='%23FFFFFF' stroke-width='1.6' stroke-linejoin='round'/></svg>") 5 5, default; }
+  a, a *, button, button *, [role="button"], [role="button"] *, [role="link"], [role="link"] *, [data-zoomable] { cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 24 24'><path d='M4.04 4.69a.5.5 0 0 1 .65-.65l16 6.5a.5.5 0 0 1-.06.95l-6.12 1.58a2 2 0 0 0-1.44 1.43l-1.58 6.13a.5.5 0 0 1-.95.06z' fill='%231C1B19' stroke='%23FFFFFF' stroke-width='1.6' stroke-linejoin='round'/></svg>") 5 5, pointer !important; }
   a { color: #1C1B19; text-decoration: none; }
   a:hover { color: #007F7A; }
   [data-card] { transition: transform .45s cubic-bezier(.2,.7,.2,1), background .35s, box-shadow .35s; box-shadow: 0 1px 2px rgba(28,27,25,.05), 0 6px 18px rgba(28,27,25,.05); }
@@ -122,7 +124,7 @@
           <h2 style="margin: 0; font-size: clamp(24px, 2.4vw, 30px); font-weight: 400; letter-spacing: -0.03em;">{{ t.workTitleLower }}</h2>
           <span style="font-size: 12px; color: #5E5B55;">{{ t.workNote }}</span>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 28px 8px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); max-width: 1200px; gap: 28px 24px;">
           <sc-for list="{{ cards }}" as="k" hint-placeholder-count="0">
             <a href="{{ k.href }}" onClick="{{ k.open }}" data-card="" style="position: relative; display: flex; flex-direction: column; gap: 18px; background: #F4F4F4; border-radius: 8px; padding: 16px 16px 20px; color: #1C1B19;">
               <span data-frame="" aria-hidden="true">{{ k.title }} — 1440</span>
@@ -756,7 +758,7 @@ const CASES = {
         { title: 'Suporte à decisão do operador', bullets: ['Telas pensadas para a carga cognitiva de operação crítica', 'Testes de usabilidade com usuários do ecossistema'], photos: [ph('eve-uam-city.png', 'Mobilidade aérea urbana')] },
       ], video: true,
       impact: [{ label: 'Produtos', value: '4', sub: 'integrados entre si' }, { label: 'Validação com stakeholders', value: '+30h', sub: 'de sessões ao longo das fases' }, { label: 'Design system', value: '1', sub: 'compartilhado pelos 4 produtos' }] },
-    { club: CLUB.pt.uzzo, id: 'uzzo', title: 'UZZO Pay', sub: 'Onboarding, criptomoedas e Pix', badge: 'Pix no go-live do Banco Central', cover: A + 'uzzo-capa-hd.png', coverPos: 'center', coverAlt: 'Telas do app UZZO',
+    { club: CLUB.pt.uzzo, id: 'uzzo', title: 'UZZO Pay', sub: 'Onboarding, criptomoedas e Pix', badge: 'Um novo app', cover: A + 'uzzo-capa-hd.png', coverPos: 'center', coverAlt: 'Telas do app UZZO',
       context: 'Fintech de conta digital com cripto. 45% das contas ficavam represadas no cadastro, e o app só oferecia Bitcoin.',
       role: 'UX Lead do app: identidade visual, fluxos e UX writing.', duration: 'abr 2021 – out 2021',
       problemStat: '2', problemLabel: 'cores disputando a mesma tela',
@@ -824,7 +826,7 @@ const CASES = {
         { title: 'Operator decision support', bullets: ['Screens designed for the cognitive load of critical operations', 'Usability tests with ecosystem users'], photos: [ph('eve-uam-city.png', 'Urban air mobility')] },
       ], video: true,
       impact: [{ label: 'Products', value: '4', sub: 'integrated with each other' }, { label: 'Stakeholder validation', value: '30h+', sub: 'of sessions across phases' }, { label: 'Design system', value: '1', sub: 'shared by all 4 products' }] },
-    { club: CLUB.en.uzzo, id: 'uzzo', title: 'UZZO Pay', sub: 'Onboarding, cryptocurrencies and Pix', badge: 'Pix on Central Bank go-live', cover: A + 'uzzo-capa-hd.png', coverPos: 'center', coverAlt: 'UZZO app screens',
+    { club: CLUB.en.uzzo, id: 'uzzo', title: 'UZZO Pay', sub: 'Onboarding, cryptocurrencies and Pix', badge: 'A brand-new app', cover: A + 'uzzo-capa-hd.png', coverPos: 'center', coverAlt: 'UZZO app screens',
       context: 'Digital account fintech with crypto. 45% of accounts got stuck at sign-up, and the app only offered Bitcoin.',
       role: 'UX Lead for the app: visual identity, flows and UX writing.', duration: 'Apr 2021 – Oct 2021',
       problemStat: '2', problemLabel: 'colors competing on the same screen',
@@ -892,7 +894,7 @@ const CASES = {
         { title: 'Soporte a la decisión del operador', bullets: ['Pantallas pensadas para la carga cognitiva de una operación crítica', 'Pruebas de usabilidad con usuarios del ecosistema'], photos: [ph('eve-uam-city.png', 'Movilidad aérea urbana')] },
       ], video: true,
       impact: [{ label: 'Productos', value: '4', sub: 'integrados entre sí' }, { label: 'Validación con stakeholders', value: '+30h', sub: 'de sesiones a lo largo de las fases' }, { label: 'Design system', value: '1', sub: 'compartido por los 4 productos' }] },
-    { club: CLUB.es.uzzo, id: 'uzzo', title: 'UZZO Pay', sub: 'Onboarding, criptomonedas y Pix', badge: 'Pix en el lanzamiento del Banco Central', cover: A + 'uzzo-capa-hd.png', coverPos: 'center', coverAlt: 'Pantallas del app de UZZO',
+    { club: CLUB.es.uzzo, id: 'uzzo', title: 'UZZO Pay', sub: 'Onboarding, criptomonedas y Pix', badge: 'Una app nueva', cover: A + 'uzzo-capa-hd.png', coverPos: 'center', coverAlt: 'Pantallas del app de UZZO',
       context: 'Fintech de cuenta digital con cripto. El 45% de las cuentas quedaba retenido en el registro, y la app solo ofrecía Bitcoin.',
       role: 'UX Lead del app: identidad visual, flujos y UX writing.', duration: 'abr 2021 – oct 2021',
       problemStat: '2', problemLabel: 'colores compitiendo en la misma pantalla',
